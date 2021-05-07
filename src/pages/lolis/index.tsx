@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import fs from "fs";
 import path from "path";
-import { getMangaLibrary } from "../../scripts/getMangaLibrary";
+import { getMangaLibrary } from "../../features/manga/getMangaLibrary";
 import { AddLoliForm } from "../../features/lolis/components/AddLoliForm";
 
 interface Props {

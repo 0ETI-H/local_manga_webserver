@@ -1,8 +1,8 @@
 # Local Manga Reader
 
-Provides a manga reading client in the browser (localhost:3000)
+Provides a manga reader webserver (localhost:3000)
 
-Uses next.js for ssr to scan public folder for manga.
+Uses next.js for SSR to scan public/manga folder for manga to display
 
 How to use:
 Put a folder with manga title followed by images.

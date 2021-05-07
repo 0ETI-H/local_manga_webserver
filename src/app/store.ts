@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { loliReducer } from "../features/lolis/loliSlice";
+import { loliReducer } from "../features/lolis/loli.slice";
+import { mangaReducer } from "../features/manga/manga.slice";
 
 export const store = configureStore({
   reducer: {
-    loli: loliReducer,
+    lolis: loliReducer,
+    manga: mangaReducer,
   },
 });
 
