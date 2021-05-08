@@ -10,11 +10,17 @@ export interface Manga {
 
 export interface MangaState {
   entities: Manga[];
-  focused?: Manga;
+  focusedEntity: Manga;
 }
 
 const initialState: MangaState = {
   entities: [],
+  focusedEntity: {
+    id: -1,
+    title: "",
+    pages: 0,
+    publicUrls: [],
+  },
 };
 
 const mangaSlice = createSlice({
@@ -24,16 +30,18 @@ const mangaSlice = createSlice({
     setEntities(state, action: PayloadAction<Manga[]>) {
       state.entities = action.payload;
     },
-    setFocused(state, action: PayloadAction<number>) {
-      state.focused = state.entities.find(
-        (manga) => manga.id === action.payload
-      );
+    setFocused(state, action: PayloadAction<Manga>) {
+      state.focusedEntity = action.payload;
     },
   },
 });
 
 export const selectMangaEntities = (state: RootState): Manga[] => {
   return state.manga.entities;
+};
+
+export const selectFocusedEntity = (state: RootState): Manga => {
+  return state.manga.focusedEntity;
 };
 
 export const mangaReducer = mangaSlice.reducer;

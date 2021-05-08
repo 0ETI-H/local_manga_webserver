@@ -5,15 +5,16 @@ import path from "path";
 import fs from "fs";
 import { MangaCardList } from "../features/manga/components/MangaCardList";
 import { useEffect } from "react";
-import { AppDispath } from "../app/store";
+import { AppDispatch } from "../app/store";
 import { useDispatch } from "react-redux";
-import { Grid, Paper } from "@material-ui/core";
+import { Grid, Paper, Typography } from "@material-ui/core";
+import { MangaReaderModal } from "../features/manga/components/MangaReaderModal";
 interface Props {
   manga: Manga[];
 }
 
 const Home: React.FunctionComponent<Props> = ({ manga }) => {
-  const dispatch: AppDispath = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setEntities(manga));
@@ -21,14 +22,15 @@ const Home: React.FunctionComponent<Props> = ({ manga }) => {
 
   return (
     <div>
-      <Grid container>
-        <Grid item xs={12} md={9}>
-          <MangaCardList></MangaCardList>
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <Paper></Paper>
+      <Grid container justify="center">
+        <Grid item xs={10}>
+          <Paper>
+            {/* <Typography variant="h2">ke-ta</Typography> */}
+            <MangaCardList></MangaCardList>
+          </Paper>
         </Grid>
       </Grid>
+      <MangaReaderModal></MangaReaderModal>
     </div>
   );
 };

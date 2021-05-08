@@ -4,6 +4,7 @@ Provides a manga reader webserver (localhost:3000)
 
 ## Tech Stack
 
+- Typescript
 - Next.js - SSR to scan public/manga to
 - Redux - State Management
   - @reduxjs/toolkit

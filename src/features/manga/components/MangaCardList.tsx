@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export const MangaCardList: React.FunctionComponent = () => {
   const mangaEntities = useSelector(selectMangaEntities);
   const mangaEntitiesRender = mangaEntities.map((mangaEntity) => (
-    <Grid item xs={12} md={4}>
+    <Grid item xs={12} sm={6} md={4} lg={3}>
       <MangaCard manga={mangaEntity}></MangaCard>
     </Grid>
   ));
