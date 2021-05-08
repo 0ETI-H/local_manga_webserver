@@ -1,11 +1,14 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme, useMediaQuery } from "@material-ui/core";
 
 import "@fontsource/roboto";
 import "@fontsource/ubuntu";
 
+const prefersDarkMode = true;
+// useMediaQuery("(prefers-color-scheme: dark)");
+
 export const theme = createMuiTheme({
   palette: {
-    type: "dark",
+    type: prefersDarkMode ? "dark" : "light",
   },
   typography: {
     h1: {
