@@ -7,7 +7,7 @@ export const MangaReaderModal: React.FunctionComponent = () => {
   const dispatch: AppDispatch = useDispatch();
 
   const focusedMangaEntity = useSelector(selectFocusedEntity);
-  console.log(focusedMangaEntity);
+  // console.log(focusedMangaEntity);
 
   const handleClose = () => {
     dispatch(setFocused({ id: -1, title: "", pages: 0, publicUrls: [] }));
@@ -22,7 +22,7 @@ export const MangaReaderModal: React.FunctionComponent = () => {
       open={focusedMangaEntity.id !== -1}
       onClose={handleClose}
       fullWidth
-      maxWidth="xl"
+      maxWidth="lg"
     >
       <DialogTitle>{focusedMangaEntity.title}</DialogTitle>
       {imagesRendered}

@@ -4,6 +4,9 @@ import "@fontsource/roboto";
 import "@fontsource/ubuntu";
 
 export const theme = createMuiTheme({
+  palette: {
+    type: "dark",
+  },
   typography: {
     h1: {
       fontFamily: "roboto",
