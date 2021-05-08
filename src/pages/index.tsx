@@ -7,6 +7,7 @@ import { MangaCardList } from "../features/manga/components/MangaCardList";
 import { useEffect } from "react";
 import { AppDispath } from "../app/store";
 import { useDispatch } from "react-redux";
+import { Grid, Paper } from "@material-ui/core";
 interface Props {
   manga: Manga[];
 }
@@ -20,7 +21,14 @@ const Home: React.FunctionComponent<Props> = ({ manga }) => {
 
   return (
     <div>
-      <MangaCardList></MangaCardList>
+      <Grid container>
+        <Grid item xs={12} md={9}>
+          <MangaCardList></MangaCardList>
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <Paper></Paper>
+        </Grid>
+      </Grid>
     </div>
   );
 };
